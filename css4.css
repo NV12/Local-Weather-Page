@@ -1,0 +1,28 @@
+body{
+  background-image: url(http://www.textures.wpgallery.com/images/almost-clear-sky-texture-for-2200x1463-40-210.jpg);
+  background-size: cover;
+}
+
+#b1{
+  display: none ; 
+}
+
+.my-content{
+  padding: 25px;
+  position: absolute;
+  width: 400px;
+  left:50%;
+  margin-left:-200px;
+  top:25%;
+  border-radius:8px;
+  background: rgba(255,255,255,0.3);
+}
+
+.my-content h1 {
+  margin-top:0;
+}
+
+.weather-content{
+  padding: 15px 0;
+  line-height: 1.5;
+}
