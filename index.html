@@ -1,3 +1,5 @@
+<!-- unable to debug button toggle functionality it keeps on showing location not available but the code for navigation is working-->
+
 <html>
 <head>
   <title>
@@ -5,9 +7,10 @@
   </title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="myjs.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css4.css">
-  <script src="myjs.js"></script>
+
 </head>
 <body>
   <div class="my-content">
@@ -19,7 +22,7 @@
       <label class="l3" for="temp" hidden>Temprature : </label><span id="temp"></span>
      </div>
     
-    <button class="btn btn-primary" id="b1" onclick="changeTemp()" hidden>Fahrenheat</button>
+    <button class="btn btn-primary" id="b1" onclick="changeTemp()" value="Fahrenheat">Change</button>
   </div>
 </body>  
 </html>

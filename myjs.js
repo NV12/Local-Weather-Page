@@ -1,6 +1,7 @@
-var x=document.getElementById("weather");
+var x;
 var tempr;
 function getLocation(){
+  x = document.getElementById("weather");
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(showPosition,showError);
   }
@@ -12,9 +13,11 @@ function getLocation(){
 function showPosition(position){
   //x.innerHTML = "Latitude: " + position.coords.latitude + 
   //  "<br>Longitude: " + position.coords.longitude;
+  console.log("1dsa");
   var latitude=position.coords.latitude;
   var longitude=position.coords.longitude;
   console.log("1");
+  console.log(position.coords.latitude);
   var url= "https://fcc-weather-api.glitch.me/api/current?lat="+latitude+"&lon="+longitude;
   loadDoc(url);
 }
@@ -95,18 +98,28 @@ function loadDoc(url) {
   
   //Fetching the weather info
   
-  //var new_url= "https://fcc-weather-api.glitch.me/api/current?lat=50&lon=20";
-  xhttp.open("GET",url, true);
+  var new_url= "https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139";
+  xhttp.open("GET",new_url, true);
   xhttp.send();
 }
 
 function changeTemp(){
-  $("#b1").prop("","Celcius");
+  //$("#b1").prop("","Celcius");
+  //var temp1=tempr;
   var temp1=tempr;
+  var button=document.getElementById("b1");
+  console.log(button.value);
+  if(button.value=="Fahrenheat")
+  {
+    temp1=(1.8*temp1)+32;
+    document.getElementById("temp").innerHTML=temp1+"F";
+    button.value="Celcius";
+  }
+  else{
+    temp1=(temp1-32)/1.8;
+    document.getElementById("temp").innerHTML=temp1+"C";
+    button.value="Fahrenheat";
+  }
+  
   console.log(temp1);
-  
-  temp1=(1.8*temp1)+32;
- 
-  document.getElementById("temp").innerHTML=temp1+"F";
-  
 }
